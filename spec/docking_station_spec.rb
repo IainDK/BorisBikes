@@ -12,7 +12,7 @@ describe DockingStation do
   it 'has a variable capacity' do
     docking_station = DockingStation.new(50)
     50.times { docking_station.dock Bike.new }
-    p docking_station
+    docking_station
     expect{ docking_station.dock Bike.new }.to raise_error 'Docking station full'
   end
 end
