@@ -64,4 +64,16 @@ describe DockingStation do
       end
     end
   end
+  
+  it 'returns bikes broken or not' do
+    bike = Bike.new
+    broken_bike = Bike.new
+    broken_bike.report_broken
+    subject.dock(bike)
+    subject.dock(broken_bike)
+    expect(subject.bike.pop).to eq broken_bike
+    expect(subject.bike.pop).to eq bike
+  #I'd like docking stations to accept returning bikes (broken or not).
+    
+end
 end
